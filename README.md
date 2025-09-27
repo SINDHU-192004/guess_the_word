@@ -1,4 +1,4 @@
-# 🎮 GUESS THE WORD – Django Web App
+**🎮 GUESS THE WORD – Django Web App **
 
 ## 📌 Project Overview
 
@@ -15,32 +15,42 @@ The system ensures:
 
 This makes it both an **engaging game for players** and a **data-driven tool for admins**.
 
+# Dashboard
 ![1](https://github.com/user-attachments/assets/0b542083-cc52-4719-af31-49b0855ed7e7)
 
+# Login Page
 ![2](https://github.com/user-attachments/assets/1cce3faa-ebe8-461c-bfb3-fc1580e8f0e2)
 
+# Registration page
 ![3](https://github.com/user-attachments/assets/17eb7869-1f09-40d7-bc4d-9fa501517f7e)
 
 ![4](https://github.com/user-attachments/assets/fb37a484-d223-4571-9d08-11d44cea575d)
 
+# Play the Game
 ![5](https://github.com/user-attachments/assets/017635ab-e11d-4867-bc5f-6c43edf710e2)
 
+# Guess
 ![6](https://github.com/user-attachments/assets/0f8c08b4-def9-4b23-b5a6-2f2f9744bd33)
 
 ![7](https://github.com/user-attachments/assets/815919a1-c9cc-4560-9025-02c9d19e7d4d)
 
 ![8](https://github.com/user-attachments/assets/063a17b1-fd87-429c-9813-a5d3caee8865)
 
+# Game History
 ![9](https://github.com/user-attachments/assets/5289f6c6-c455-450f-b78b-97e2dbc20efe)
 
 ![10](https://github.com/user-attachments/assets/7decf88d-a629-4473-a55e-d2e5b0c123f2)
 
+# Admin
 ![11](https://github.com/user-attachments/assets/1d26f0f5-ceca-4b8e-acd5-8ead52bad477)
 
+# Daily Report
 ![12](https://github.com/user-attachments/assets/c3438150-023f-42bf-811e-108e48a0a197)
 
+# User Report
 ![13](https://github.com/user-attachments/assets/0aa0d3e4-fff3-4d26-9696-6d882476c29b)
 
+# Manage Words
 ![14](https://github.com/user-attachments/assets/09f9f621-e813-4e12-be6d-1c4db6408b67)
 
 ---
@@ -48,21 +58,13 @@ This makes it both an **engaging game for players** and a **data-driven tool for
 ### 🎮 Features
 
 ✅ Two user types (Admin, Player)
-
 ✅ Custom registration & login validation
-
 ✅ Daily play limit: 3 games per user
-
 ✅ 5 guesses per game, uppercase validation
-
 ✅ Per-letter feedback (green/orange/grey)
-
 ✅ Win/Lose flow with result messages
-
 ✅ Guess history and outcomes stored
-
 ✅ Admin reports (daily and per-user)
-
 ✅ Manage words (activate/deactivate)
 
 ---
