@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Admin Dashboard | Guess the Word{% endblock %}
+
+{% block content %}
+<div class="row g-3">
+  <div class="col-md-3">
+    <div class="stats-card">
+      <span class="stats-number">{{ total_users }}</span>
+      Users
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="stats-card">
+      <span class="stats-number">{{ total_words }}</span>
+      Active Words
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="stats-card">
+      <span class="stats-number">{{ total_games }}</span>
+      Total Games
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="stats-card">
+      <span class="stats-number">{{ users_today }}</span>
+      Users Today ({{ games_today }} games)
+    </div>
+  </div>
+</div>
+
+<div class="row mt-3">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">Quick Actions</h5>
+        <div>
+          <a href="{% url 'admin_reports' %}" class="btn btn-sm btn-outline-light me-2">View Reports</a>
+          <a href="{% url 'manage_words' %}" class="btn btn-sm btn-outline-light">Manage Words</a>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="mb-0">Use the navigation above to manage words and view detailed reports.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

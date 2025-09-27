@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django
+*.log
+*.pot
+*.pyc
+*.pid
+*.mo
+*.pot
+local_settings.py
+media/
+/staticfiles/
+staticfiles/
+static_root/
+collectstatic/
+
+# SQLite DB
+/db.sqlite3
+
+# Environments
+.env
+.env.*
+.venv/
+venv/
+ENV/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Node (if used for assets)
+node_modules/
+
+# Pytest / coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Cache
+*.swp
+*.swo
+*.tmp

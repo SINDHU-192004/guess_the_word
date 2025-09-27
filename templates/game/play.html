@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load custom_filters %}
+{% block title %}Play | Guess the Word{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h4 class="mb-0"><i class="fas fa-keyboard me-2"></i>Guess the Word</h4>
+        <div>
+          <span class="badge bg-primary">Guesses: {{ game.guesses_count }} / {{ game.max_guesses }}</span>
+          <span class="badge bg-info ms-2">Remaining: {{ remaining_guesses }}</span>
+        </div>
+      </div>
+      <div class="card-body p-4">
+        <div class="mb-4 text-center">
+          <div class="d-flex flex-column align-items-center" style="gap:12px">
+            {% for row in "01234" %}
+              {% with row_index=forloop.counter0 %}
+                <div class="game-grid">
+                  {% with this_guess=guesses|index:row_index %}
+                    {% for col in "01234" %}
+                      {% with col_index=forloop.counter0 %}
+                        {% if this_guess %}
+                          {% with letter=this_guess.guess_word|char_at:col_index %}
+                            {% with state=this_guess.feedback|index:col_index %}
+                              <div class="letter-box {% if state == 'correct' %}letter-correct{% elif state == 'wrong_position' %}letter-wrong-position{% elif state == 'incorrect' %}letter-incorrect{% endif %}"
+                                   data-col="{{ col_index }}">{{ letter }}</div>
+                            {% endwith %}
+                          {% endwith %}
+                        {% else %}
+                          <div class="letter-box" data-col="{{ col_index }}"></div>
+                        {% endif %}
+                      {% endwith %}
+                    {% endfor %}
+                  {% endwith %}
+                </div>
+              {% endwith %}
+            {% endfor %}
+          </div>
+        </div>
+
+        {% if game.status == 'ACTIVE' %}
+          <form method="post" class="text-center" id="guessForm">
+            {% csrf_token %}
+            <div class="row g-2 align-items-center justify-content-center">
+              <div class="col-10 col-md-6">
+                {{ form.guess }}
+              </div>
+            </div>
+            <div class="row mt-3 justify-content-center">
+              <div class="col-10 col-md-6">
+                <div class="d-grid gap-2">
+                  <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane me-2"></i>Submit</button>
+                  <button type="button" id="hintBtn" class="btn btn-outline-light" style="border:1px solid rgba(167,139,250,.45)"><i class="fas fa-lightbulb me-2"></i>Hint</button>
+                </div>
+              </div>
+            </div>
+            <div class="form-text mt-2">Enter a 5-letter UPPERCASE English word.</div>
+            <div id="hintText" class="mt-2" style="color:#e9e5ff"></div>
+          </form>
+        {% endif %}
+
+        <div class="mt-4 text-center">
+          <a href="{% url 'game_history' %}" class="btn btn-link">View History</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% block extra_js %}
+<script>
+  // CSRF helper
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
+  const csrftoken = getCookie('csrftoken');
+
+  const hintBtn = document.getElementById('hintBtn');
+  const hintText = document.getElementById('hintText');
+  if (hintBtn) {
+    hintBtn.addEventListener('click', async () => {
+      hintBtn.disabled = true;
+      try {
+        const resp = await fetch("{% url 'get_hint' game.id %}", {
+          method: 'POST',
+          headers: { 'X-CSRFToken': csrftoken },
+        });
+        const data = await resp.json();
+        if (data.ok) {
+          const col = data.index; // 0..4
+          hintText.textContent = `Hint: Position ${col + 1} is '${data.letter}'.`;
+          // Highlight all tiles in that column
+          document.querySelectorAll(`.letter-box[data-col='${col}']`).forEach(el => {
+            el.classList.add('hint-highlight');
+          });
+        } else {
+          hintText.textContent = data.error || 'No hint available.';
+        }
+      } catch (e) {
+        hintText.textContent = 'Hint failed. Please try again.';
+      }
+    });
+  }
+</script>
+{% endblock %}
+{% endblock %}

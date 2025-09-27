@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard | Guess the Word{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-4">
+    <div class="stats-card">
+      <span class="stats-number">{{ profile.games_played }}</span>
+      Games Played
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="stats-card">
+      <span class="stats-number">{{ profile.games_won }}</span>
+      Games Won
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="stats-card">
+      <span class="stats-number">{{ profile.win_rate }}%</span>
+      Win Rate
+    </div>
+  </div>
+</div>
+
+<div class="row justify-content-center mt-3">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="mb-0">Ready to play?</h4>
+      </div>
+      <div class="card-body p-4 text-center">
+        <p class="lead mb-3">You've played <strong>{{ games_today }}</strong> of <strong>3</strong> games today.</p>
+        {% if can_play %}
+          <a href="{% url 'start_game' %}" class="btn btn-primary"><i class="fas fa-play me-2"></i>Start New Game</a>
+        {% else %}
+          <button class="btn btn-secondary" disabled><i class="fas fa-ban me-2"></i>Daily Limit Reached</button>
+        {% endif %}
+        <a href="{% url 'game_history' %}" class="btn btn-link ms-2">View History</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

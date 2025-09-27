@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Welcome | Guess the Word{% endblock %}
+{% block content %}
+<section class="py-4">
+  <div class="container">
+    <!-- HERO: fill first viewport -->
+    <div class="row align-items-center gy-4" style="min-height: calc(100vh - 120px);">
+      <div class="col-lg-10 mx-auto">
+        <div class="p-4 p-md-5 p-lg-5" style="border:1px solid rgba(167,139,250,.35); border-radius:24px; background:linear-gradient(180deg, rgba(2,6,23,.78), rgba(2,6,23,.52)); box-shadow:0 50px 100px rgba(0,0,0,.55), 0 0 0 1px rgba(167,139,250,.18) inset">
+          <h1 class="fw-bold mb-2" style="line-height:1.1; font-size: clamp(2.2rem, 4vw, 3.4rem); color:#e2e8f0; text-transform: uppercase;">
+            <span style="
+              background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+              -webkit-background-clip: text; background-clip: text; color: transparent;
+              text-shadow: 0 4px 24px rgba(245,158,11,.25);
+              display:block;">HELLO</span>
+            <span style="display:block; color:#e2e8f0">WELCOME TO <span style="color:var(--secondary-color)">GUESS THE WORD</span> GAME</span>
+          </h1>
+          <p class="lead mb-4 mt-2" style="color:#cbd5e1">Crack the 5‑letter code in 5 tries. Color feedback guides you after every guess. You can play up to <strong>3 games per day</strong>.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="{% url 'login' %}" class="btn btn-primary btn-lg"><i class="fas fa-bolt me-2"></i>Login & Play</a>
+            <a href="{% url 'register' %}" class="btn btn-outline-light btn-lg" style="border:1px solid rgba(167,139,250,.45)"><i class="fas fa-user-plus me-2"></i>Create Account</a>
+          </div>
+          <div class="mt-4 d-flex flex-wrap gap-3">
+            <div class="feature-chip"><i class="fas fa-puzzle-piece"></i> 5-letter word game</div>
+            <div class="feature-chip"><i class="fas fa-fire"></i> Up to 3 games/day</div>
+            <div class="feature-chip"><i class="fas fa-trophy"></i> Build your streak</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOW TO PLAY + IMAGE SIDE BY SIDE -->
+    <div class="row mt-5 g-4 align-items-stretch">
+      <div class="col-lg-6">
+        <div class="h-100 p-4 p-md-5" style="border:1px solid rgba(167,139,250,.25); border-radius:18px; background:linear-gradient(180deg, rgba(15,23,42,.65), rgba(2,6,23,.35));">
+          <h3 class="mb-3" style="color:#e2e8f0"><i class="fas fa-book-open me-2" style="color:var(--secondary-color)"></i>How to play</h3>
+          <ol class="mb-4" style="color:#cbd5e1">
+            <li class="mb-1">Enter a 5-letter UPPERCASE English word and submit.</li>
+            <li class="mb-1">You have a maximum of 5 guesses.</li>
+            <li class="mb-1">Colors guide you after each guess:
+              <ul style="list-style:disc; margin-left:1.2rem">
+                <li><strong style="color:var(--correct-color)">Green</strong>: letter is correct and in the right position</li>
+                <li><strong style="color:var(--wrong-position-color)">Orange</strong>: letter is correct but in the wrong position</li>
+                <li><strong style="color:var(--incorrect-color)">Grey</strong>: letter is not in the word</li>
+              </ul>
+            </li>
+            <li class="mb-1">Win by matching the word; otherwise after 5 tries it’s game over.</li>
+            <li class="mb-1">You can play up to 3 games per day.</li>
+          </ol>
+          <div class="small" style="color:#94a3b8">Tip: Use distinct letters in early guesses to learn faster.</div>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center d-flex align-items-center justify-content-center">
+        <img src="{% static 'img/hero-grid.svg' %}" alt="Sample grid" class="img-fluid" style="max-width: 540px; border-radius: 16px; box-shadow: 0 24px 60px rgba(0,0,0,.45); background: linear-gradient(180deg, rgba(2,6,23,.78), rgba(2,6,23,.52)); border: 1px solid rgba(167,139,250,.25)">
+      </div>
+    </div>
+    
+    <!-- ABOUT / WHAT IT'S BUILT ON -->
+    <div class="row mt-4">
+      <div class="col-lg-10 mx-auto">
+        <div class="p-4 p-md-5" style="border:1px solid rgba(167,139,250,.25); border-radius:18px; background:linear-gradient(180deg, rgba(15,23,42,.65), rgba(2,6,23,.35));">
+          <h3 class="mb-3 d-flex align-items-center" style="color:#e9e5ff">
+            <i class="fas fa-circle-info me-2" style="color:var(--secondary-color)"></i>
+            About Guess the Word
+          </h3>
+          <p class="mb-0" style="color:#c7c3e9">
+            Guess the Word is a Django 4 (Python) app backed by the Django ORM (SQLite in development).
+            Core models include <code>Game</code>, <code>Word</code>, <code>Guess</code>, and <code>UserProfile</code>; the feedback engine labels each letter as <code>correct</code>, <code>wrong_position</code>, or <code>incorrect</code>.
+            Gameplay rules: 5‑letter words, 5 guesses, with a per‑user daily cap and an optional one‑time Hint exposed via a POST API.
+            Administration is handled through Django Admin and custom dashboards for usage and word management.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+{% endblock %}

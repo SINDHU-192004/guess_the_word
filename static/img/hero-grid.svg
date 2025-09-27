@@ -1,0 +1,51 @@
+<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Guess Word sample grid (dark purple boxes theme)">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2e2533"/>
+      <stop offset="100%" stop-color="#3a2f3d"/>
+    </linearGradient>
+    <filter id="drop" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="b"/>
+      <feOffset dy="8" in="b" result="o"/>
+      <feFlood flood-color="#000" flood-opacity=".28"/>
+      <feComposite in2="o" operator="in"/>
+      <feComposite in2="SourceGraphic" operator="over"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="600" fill="url(#bgGrad)"/>
+
+  <!-- grid group -->
+  <g transform="translate(140,150)" font-family="Poppins, Arial, sans-serif" font-weight="600" text-anchor="middle">
+    <!-- Row 1: G U E S S -->
+    <g transform="translate(0,0)">
+      <!-- Default grey tiles -->
+      <rect x="0" y="0" width="150" height="150" rx="20" fill="#2b2730" filter="url(#drop)"/>
+      <rect x="170" y="0" width="150" height="150" rx="20" fill="#2b2730" filter="url(#drop)"/>
+      <rect x="340" y="0" width="150" height="150" rx="20" fill="#2b2730" filter="url(#drop)"/>
+      <rect x="510" y="0" width="150" height="150" rx="20" fill="#2b2730" filter="url(#drop)"/>
+      <!-- Correct (green) -->
+      <rect x="680" y="0" width="150" height="150" rx="20" fill="#22c55e" filter="url(#drop)"/>
+
+      <text x="75" y="100" font-size="84" fill="#f5f5f7">G</text>
+      <text x="245" y="100" font-size="84" fill="#f5f5f7">U</text>
+      <text x="415" y="100" font-size="84" fill="#f5f5f7">E</text>
+      <text x="585" y="100" font-size="84" fill="#f5f5f7">S</text>
+      <text x="755" y="100" font-size="84" fill="#0b1220">S</text>
+    </g>
+
+    <!-- Row 2 centered: W O R D (O and D orange) -->
+    <!-- 5-tile row width = 830; 4-tile row width = 660; center offset = 85 -->
+    <g transform="translate(85,190)">
+      <!-- Default grey, Orange (misplaced), Grey, Green (correct) -->
+      <rect x="0" y="0" width="150" height="150" rx="20" fill="#2b2730" filter="url(#drop)"/>
+      <rect x="170" y="0" width="150" height="150" rx="20" fill="#f59e0b" filter="url(#drop)"/>
+      <rect x="340" y="0" width="150" height="150" rx="20" fill="#2b2730" filter="url(#drop)"/>
+      <rect x="510" y="0" width="150" height="150" rx="20" fill="#22c55e" filter="url(#drop)"/>
+
+      <text x="75" y="100" font-size="84" fill="#f5f5f7">W</text>
+      <text x="245" y="100" font-size="84" fill="#0b1220">O</text>
+      <text x="415" y="100" font-size="84" fill="#f5f5f7">R</text>
+      <text x="585" y="100" font-size="84" fill="#0b1220">D</text>
+  </g>
+</g>
+</svg>

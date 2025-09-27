@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}History | Guess the Word{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-10">
+    <div class="card">
+      <div class="card-header d-flex align-items-center justify-content-between">
+        <h4 class="mb-0"><i class="fas fa-history me-2"></i>Your Game History</h4>
+        <a href="{% url 'home' %}" class="btn btn-sm btn-outline-light">Back to Dashboard</a>
+      </div>
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table class="table table-hover mb-0">
+            <thead class="table-light">
+              <tr>
+                <th>Date</th>
+                <th>Word</th>
+                <th>Status</th>
+                <th>Guesses Used</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for game in games %}
+                <tr>
+                  <td>{{ game.created_at|date:'Y-m-d H:i' }}</td>
+                  <td><span class="badge bg-dark">{{ game.word.word }}</span></td>
+                  <td>
+                    {% if game.status == 'WON' %}
+                      <span class="badge bg-success">Won</span>
+                    {% else %}
+                      <span class="badge bg-danger">Lost</span>
+                    {% endif %}
+                  </td>
+                  <td>{{ game.guesses_count }}/{{ game.max_guesses }}</td>
+                  <td>
+                    <a class="btn btn-sm btn-outline-primary" href="{% url 'game_result' game.id %}">View</a>
+                  </td>
+                </tr>
+              {% empty %}
+                <tr>
+                  <td colspan="5" class="text-center p-4">No completed games yet. Start a new game!</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

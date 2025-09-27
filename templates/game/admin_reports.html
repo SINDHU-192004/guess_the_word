@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block title %}Admin Reports | Guess the Word{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-10">
+    <div class="card mb-3">
+      <div class="card-header">
+        <h4 class="mb-0"><i class="fas fa-chart-bar me-2"></i>Generate Report</h4>
+      </div>
+      <div class="card-body">
+        <form method="post" class="row g-3">
+          {% csrf_token %}
+          <div class="col-md-4">
+            <label class="form-label">Report Type</label>
+            {{ form.report_type }}
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Date</label>
+            {{ form.date }}
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">User</label>
+            {{ form.user }}
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit"><i class="fas fa-sync me-2"></i>Generate</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    {% if report_data %}
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">Report</h5>
+        </div>
+        <div class="card-body">
+          {% if report_data.type == 'daily' %}
+            <h5 class="mb-3">Daily Report for {{ report_data.date }}</h5>
+            <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between"><span>Number of users</span><strong>{{ report_data.users_count }}</strong></li>
+              <li class="list-group-item d-flex justify-content-between"><span>Total games</span><strong>{{ report_data.total_games }}</strong></li>
+              <li class="list-group-item d-flex justify-content-between"><span>Correct guesses</span><strong>{{ report_data.correct_guesses }}</strong></li>
+              <li class="list-group-item d-flex justify-content-between"><span>Success rate</span><strong>{{ report_data.success_rate }}%</strong></li>
+            </ul>
+          {% elif report_data.type == 'user' %}
+            <h5 class="mb-3">User Report: {{ report_data.user.username }}</h5>
+            <p class="mb-2">Total games: <strong>{{ report_data.total_games }}</strong> | Won: <strong>{{ report_data.games_won }}</strong></p>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Words Tried</th>
+                    <th>Correct Guesses</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for date, stats in report_data.daily_stats.items %}
+                    <tr>
+                      <td>{{ date }}</td>
+                      <td>{{ stats.total }}</td>
+                      <td>{{ stats.won }}</td>
+                    </tr>
+                  {% empty %}
+                    <tr><td colspan="3" class="text-center">No data.</td></tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

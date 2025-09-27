@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block title %}Register | Guess the Word{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-7">
+    <div class="card auth-card">
+      <div class="card-header">
+        <h3 class="mb-0"><i class="fas fa-user-plus me-2"></i>Create Account</h3>
+      </div>
+      <div class="card-body p-4">
+        <form method="post" novalidate>
+          {% csrf_token %}
+
+          <div class="mb-3">
+            <label class="form-label">Username</label>
+            {{ form.username }}
+            <div class="form-text">At least 5 chars, must include both Upper and lower case letters.</div>
+            {{ form.username.errors }}
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <div class="input-group flex-nowrap">
+              {{ form.password1 }}
+              <button type="button" class="btn btn-outline-light toggle-eye" data-target="id_password1" aria-label="Show password" title="Show/Hide">
+                <i class="far fa-eye"></i>
+              </button>
+            </div>
+            <div class="form-text">At least 5 chars, include alpha, number and one of $, %, *, @</div>
+            {{ form.password1.errors }}
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label">Confirm Password</label>
+            <div class="input-group flex-nowrap">
+              {{ form.password2 }}
+              <button type="button" class="btn btn-outline-light toggle-eye" data-target="id_password2" aria-label="Show password" title="Show/Hide">
+                <i class="far fa-eye"></i>
+              </button>
+            </div>
+            {{ form.password2.errors }}
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <a href="{% url 'login' %}">Already have an account? Login</a>
+            <button type="submit" class="btn btn-success">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  (function(){
+    document.querySelectorAll('.toggle-eye').forEach(function(btn){
+      const targetId = btn.getAttribute('data-target');
+      const input = document.getElementById(targetId);
+      if(!input) return;
+      btn.addEventListener('click', function(){
+        const isPwd = input.getAttribute('type') === 'password';
+        input.setAttribute('type', isPwd ? 'text' : 'password');
+        this.innerHTML = isPwd ? '<i class="far fa-eye-slash"></i>' : '<i class="far fa-eye"></i>';
+      });
+    });
+  })();
+</script>
+{% endblock %}
