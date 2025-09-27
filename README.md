@@ -59,15 +59,107 @@ This makes it both an **engaging game for players** and a **data-driven tool for
 
 ## 🎮 **Features**
 
-- ✅ **Two user types** (**Admin**, **Player**)  
-- ✅ **Custom registration & login validation**  
-- ✅ **Daily play limit**: **3 games per user**  
-- ✅ **5 guesses per game**, **uppercase validation**  
-- ✅ **Per-letter feedback** (**green/orange/grey**)  
-- ✅ **Win/Lose flow** with **result messages**  
-- ✅ **Guess history** and **outcomes stored**  
-- ✅ **Admin reports** (**daily** and **per-user**)  
-- ✅ **Manage words** (**activate/deactivate**)  
+✅ **Two user types** (**Admin**, **Player**)  
+✅ **Custom registration & login validation**  
+✅ **Daily play limit**: **3 games per user**  
+✅ **5 guesses per game**, **uppercase validation**  
+✅ **Per-letter feedback** (**green/orange/grey**)  
+✅ **Win/Lose flow** with **result messages**  
+✅ **Guess history** and **outcomes stored**  
+✅ **Admin reports** (**daily** and **per-user**)  
+✅ **Manage words** (**activate/deactivate**)  
+
+---
+                    ┌─────────────┐
+                    │    Home     │
+                    │ Register /  │
+                    │   Login     │
+                    └─────┬───────┘
+                          │
+          ┌───────────────┴───────────────┐
+          │                               │
+   ┌──────▼──────┐                 ┌──────▼──────┐
+   │  Register   │                 │    Login    │
+   │ Validate    │                 │ Authenticate│
+   │ Username &  │                 │ Credentials │
+   │ Password    │                 └──────┬──────┘
+   └──────┬──────┘                        │
+          └───────────────┬──────────────┘
+                          ▼
+                    ┌─────────────┐
+                    │ Dashboard   │
+                    │  (Player)   │
+                    └─────┬───────┘
+                          │
+                ┌─────────▼─────────┐
+                │ Check Daily Limit │
+                │ (Max 3 Games/Day)│
+                └─────────┬─────────┘
+                          │
+          ┌───────────────┴───────────────┐
+          │                               │
+   ┌──────▼─────────┐               ┌─────▼──────┐
+   │ Under Limit    │               │ Limit Reached│
+   │ Start New Game │               │ Show Message │
+   └──────┬─────────┘               └─────────────┘
+          │
+          ▼
+   ┌───────────────┐
+   │ Select Random │
+   │ 5-letter Word │
+   └───────┬───────┘
+           │
+   ┌───────▼─────────┐
+   │ User Submits    │
+   │ Guess (5 letters│
+   └───────┬─────────┘
+           │
+   ┌───────▼─────────┐
+   │ Validate Input  │
+   │ Length & Format │
+   └───────┬─────────┘
+           │
+   ┌───────▼─────────────┐
+   │ Compare with Target │
+   │ Word → Feedback     │
+   │ (Green/Orange/Grey)│
+   └───────┬─────────────┘
+           │
+   ┌───────▼─────────────┐
+   │ Store Guess in DB   │
+   │ (User, Word, Date) │
+   └───────┬─────────────┘
+           │
+   ┌───────▼─────────────┐
+   │ Is Guess Correct?   │
+   └───────┬─────────────┘
+     Yes   │        No
+ ┌───────▼───┐    ┌───────────────┐
+ │ Show       │    │ Max 5 Guesses?│
+ │ Congrats   │    └───────┬───────┘
+ │ & End Game │            │
+ └───────────┘         ┌───▼───────┐
+                       │ Allow Next│
+                       │ Guess    │
+                       └──────────┘
+                       │
+                       ▼
+                 ┌───────────────┐
+                 │ After 5 Guesses│
+                 │ Show "Better   │
+                 │ Luck Next Time"│
+                 └───────────────┘
+
+ ┌─────────────────────────────┐
+ │ Player History & Stats      │
+ │ List of Games & Results     │
+ └─────────────────────────────┘
+
+ ┌─────────────────────────────┐
+ │ Admin Dashboard             │
+ │ - Manage Words              │
+ │ - Daily/User Reports        │
+ └─────────────────────────────┘
 
 ---
 
@@ -81,9 +173,9 @@ The app supports **two user types**:
 
 ### 🎯 **Gameplay**
 At game start, a **random 5-letter uppercase word** is chosen. Each submitted **guess** shows **per-letter feedback**:
-- 🟩 **Green → correct letter in correct position**  
-- 🟧 **Orange → correct letter in wrong position**  
-- ⬛ **Grey → letter not in target word**  
+🟩 **Green → correct letter in correct position**  
+🟧 **Orange → correct letter in wrong position**  
+⬛ **Grey → letter not in target word**  
 
 All **words** and **guesses** (with **timestamps**) are **stored in the database**.  
 **Admins** can view **day-wise** and **user-wise reports**.
