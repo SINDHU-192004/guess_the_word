@@ -1,104 +1,108 @@
-**🎮 GUESS THE WORD – Django Web App **
+# 🎮 **GUESS THE WORD – Django Web App** 
 
-## 📌 Project Overview
+## 📌 **Project Overview**
 
-**Guess the Word** is a Django-based Wordle-style web application developed as part of the OpenText internship onboarding assignment.  
-The project implements both **Player** and **Admin** user roles, enforces custom registration/login rules, and provides a fun 5-letter guessing game with feedback highlighting (green/orange/grey). Each player can play up to **3 games per day**, with **5 guesses per game**, while admins can configure words and generate detailed reports (daily and user-wise). 
+**Guess the Word** is a **Django-based Wordle-style web application** developed as part of the **OpenText internship onboarding assignment**.  
+The project implements both **Player** and **Admin** user roles, enforces **custom registration/login rules**, and provides a fun **5-letter guessing game** with feedback highlighting (**green/orange/grey**). Each **player** can play up to **3 games per day**, with **5 guesses per game**, while **admins** can configure words and generate detailed reports (**daily and user-wise**). 
 
 The system ensures:
-- Secure registration (username rules + strong password policy)  
-- Pre-loaded database with 20 five-letter uppercase words  
-- Random word selection for each game session  
-- Interactive gameplay with instant feedback on guesses  
-- Storage of all attempts and results in the database  
-- Admin dashboards with reports on usage and success rates  
+- **Secure registration** (username rules + strong password policy)  
+- **Pre-loaded database** with **20 five-letter uppercase words**  
+- **Random word selection** for each game session  
+- **Interactive gameplay** with instant feedback on guesses  
+- **Storage of all attempts and results** in the database  
+- **Admin dashboards** with **reports on usage and success rates**  
 
 This makes it both an **engaging game for players** and a **data-driven tool for admins**.
 
-# Dashboard
+---
+
+# **Dashboard**
 ![1](https://github.com/user-attachments/assets/0b542083-cc52-4719-af31-49b0855ed7e7)
 
-# Login Page
+# **Login Page**
 ![2](https://github.com/user-attachments/assets/1cce3faa-ebe8-461c-bfb3-fc1580e8f0e2)
 
-# Registration page
+# **Registration Page**
 ![3](https://github.com/user-attachments/assets/17eb7869-1f09-40d7-bc4d-9fa501517f7e)
 
 ![4](https://github.com/user-attachments/assets/fb37a484-d223-4571-9d08-11d44cea575d)
 
-# Play the Game
+# **Play the Game**
 ![5](https://github.com/user-attachments/assets/017635ab-e11d-4867-bc5f-6c43edf710e2)
 
-# Guess
+# **Guess**
 ![6](https://github.com/user-attachments/assets/0f8c08b4-def9-4b23-b5a6-2f2f9744bd33)
 
 ![7](https://github.com/user-attachments/assets/815919a1-c9cc-4560-9025-02c9d19e7d4d)
 
 ![8](https://github.com/user-attachments/assets/063a17b1-fd87-429c-9813-a5d3caee8865)
 
-# Game History
+# **Game History**
 ![9](https://github.com/user-attachments/assets/5289f6c6-c455-450f-b78b-97e2dbc20efe)
 
 ![10](https://github.com/user-attachments/assets/7decf88d-a629-4473-a55e-d2e5b0c123f2)
 
-# Admin
+# **Admin**
 ![11](https://github.com/user-attachments/assets/1d26f0f5-ceca-4b8e-acd5-8ead52bad477)
 
-# Daily Report
+# **Daily Report**
 ![12](https://github.com/user-attachments/assets/c3438150-023f-42bf-811e-108e48a0a197)
 
-# User Report
+# **User Report**
 ![13](https://github.com/user-attachments/assets/0aa0d3e4-fff3-4d26-9696-6d882476c29b)
 
-# Manage Words
+# **Manage Words**
 ![14](https://github.com/user-attachments/assets/09f9f621-e813-4e12-be6d-1c4db6408b67)
 
 ---
 
-### 🎮 Features
+## 🎮 **Features**
 
-✅ Two user types (Admin, Player)
-✅ Custom registration & login validation
-✅ Daily play limit: 3 games per user
-✅ 5 guesses per game, uppercase validation
-✅ Per-letter feedback (green/orange/grey)
-✅ Win/Lose flow with result messages
-✅ Guess history and outcomes stored
-✅ Admin reports (daily and per-user)
-✅ Manage words (activate/deactivate)
-
----
-
-## 📖 Project Summary
-This project fulfills the **“Guess the Word”** specifications provided by **OpenText** for pre-onboarding assignment.  
-
-The app supports two user types:
-- **Player users:** play the guessing game (max 3 games/day, 5 guesses per game)
-- **Admin users:** manage words and view reports
-
-### 🎯 Gameplay
-At game start, a random 5-letter uppercase word is chosen. Each submitted guess shows per-letter feedback:
-- 🟩 Green → correct letter in correct position  
-- 🟧 Orange → correct letter in wrong position  
-- ⬛ Grey → letter not in target word  
-
-All words and guesses (with timestamps) are stored in the database. Admins can view **day-wise** and **user-wise reports**.
+- ✅ **Two user types** (**Admin**, **Player**)  
+- ✅ **Custom registration & login validation**  
+- ✅ **Daily play limit**: **3 games per user**  
+- ✅ **5 guesses per game**, **uppercase validation**  
+- ✅ **Per-letter feedback** (**green/orange/grey**)  
+- ✅ **Win/Lose flow** with **result messages**  
+- ✅ **Guess history** and **outcomes stored**  
+- ✅ **Admin reports** (**daily** and **per-user**)  
+- ✅ **Manage words** (**activate/deactivate**)  
 
 ---
 
-## 🛠 Tech Stack
-- Python **3.10+**
-- Django **4.2**
-- SQLite (default dev DB)
-- Bootstrap 5 + Font Awesome
+## 📖 **Project Summary**
+
+This project fulfills the **“Guess the Word” specifications** provided by **OpenText** for **pre-onboarding assignment**.  
+
+The app supports **two user types**:
+- **Player users:** play the **guessing game** (**max 3 games/day**, **5 guesses per game**)  
+- **Admin users:** **manage words** and **view reports**  
+
+### 🎯 **Gameplay**
+At game start, a **random 5-letter uppercase word** is chosen. Each submitted **guess** shows **per-letter feedback**:
+- 🟩 **Green → correct letter in correct position**  
+- 🟧 **Orange → correct letter in wrong position**  
+- ⬛ **Grey → letter not in target word**  
+
+All **words** and **guesses** (with **timestamps**) are **stored in the database**.  
+**Admins** can view **day-wise** and **user-wise reports**.
 
 ---
 
-## 🚀 How to Run Locally (Windows PowerShell)
+## 🛠 **Tech Stack**
+- **Python 3.10+**  
+- **Django 4.2**  
+- **SQLite** (default dev DB)  
+- **Bootstrap 5 + Font Awesome**  
 
-From project root: `c:/Users/91636/Desktop/guess_the_word`
+---
 
-### 1️⃣ Create a virtual environment and install dependencies
+## 🚀 **How to Run Locally (Windows PowerShell)**
+
+From **project root**: `c:/Users/91636/Desktop/guess_the_word`
+
+### 1️⃣ **Create a virtual environment and install dependencies**
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
