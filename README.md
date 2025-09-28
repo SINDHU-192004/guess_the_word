@@ -34,14 +34,14 @@ This makes it both an **engaging game for players** and a **data-driven tool for
 # **Guess**
 ![6](https://github.com/user-attachments/assets/0f8c08b4-def9-4b23-b5a6-2f2f9744bd33)
 
-![7](https://github.com/user-attachments/assets/815919a1-c9cc-4560-9025-02c9d19e7d4d)
+![7](https://github.com/user-attachments/assets/bda8e12f-bc24-4559-a61d-4d908917044d)
 
 ![8](https://github.com/user-attachments/assets/063a17b1-fd87-429c-9813-a5d3caee8865)
 
 # **Game History**
 ![9](https://github.com/user-attachments/assets/5289f6c6-c455-450f-b78b-97e2dbc20efe)
 
-![10](https://github.com/user-attachments/assets/7decf88d-a629-4473-a55e-d2e5b0c123f2)
+![10](https://github.com/user-attachments/assets/fd5ed688-7cea-4283-ada3-18d4ae873d1d)
 
 # **Admin**
 ![11](https://github.com/user-attachments/assets/1d26f0f5-ceca-4b8e-acd5-8ead52bad477)
