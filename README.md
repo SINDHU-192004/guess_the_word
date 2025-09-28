@@ -140,8 +140,8 @@ Open 👉 [http://127.0.0.1:8000/]
 
 ## 📜 Attribution
 
-This project was created for OpenText internship onboarding tasks (2025).
-
+This project was developed as part of the OpenText Internship Onboarding Program (2025).
+It was created to fulfill the onboarding requirement of demonstrating proficiency in Python and Java, as outlined in the training modules provided to interns.
 
 
 
