@@ -162,6 +162,7 @@ def game_result(request, game_id):
     context = {
         'game': game,
         'guesses': guesses,
+        'last_guess': guesses.last(),
     }
     
     return render(request, 'game/result.html', context)
