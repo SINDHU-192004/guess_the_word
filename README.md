@@ -17,42 +17,44 @@ This makes it both an **engaging game for players** and a **data-driven tool for
 
 ---
 
-# **Dashboard**
+# SCREENSHOTS
+
+## **Dashboard**
 ![1](https://github.com/user-attachments/assets/0b542083-cc52-4719-af31-49b0855ed7e7)
 
-# **Login Page**
+## **Login Page**
 ![2](https://github.com/user-attachments/assets/1cce3faa-ebe8-461c-bfb3-fc1580e8f0e2)
 
-# **Registration Page**
+## **Registration Page**
 ![3](https://github.com/user-attachments/assets/17eb7869-1f09-40d7-bc4d-9fa501517f7e)
 
 ![4](https://github.com/user-attachments/assets/fb37a484-d223-4571-9d08-11d44cea575d)
 
-# **Play the Game**
+## **Play the Game**
 ![5](https://github.com/user-attachments/assets/017635ab-e11d-4867-bc5f-6c43edf710e2)
 
-# **Guess**
+## **Guess**
 ![6](https://github.com/user-attachments/assets/f2acc6ed-fe4a-46cd-8ffa-2712bf96beef)
 
 ![7](https://github.com/user-attachments/assets/bda8e12f-bc24-4559-a61d-4d908917044d)
 
 ![8](https://github.com/user-attachments/assets/fe3f7aac-d497-4146-9ec5-fd2264c89d59)
 
-# **Game History**
+## **Game History**
 ![9](https://github.com/user-attachments/assets/5289f6c6-c455-450f-b78b-97e2dbc20efe)
 
 ![10](https://github.com/user-attachments/assets/fd5ed688-7cea-4283-ada3-18d4ae873d1d)
 
-# **Admin**
+## **Admin**
 ![11](https://github.com/user-attachments/assets/1d26f0f5-ceca-4b8e-acd5-8ead52bad477)
 
-# **Daily Report**
+## **Daily Report**
 ![12](https://github.com/user-attachments/assets/c3438150-023f-42bf-811e-108e48a0a197)
 
-# **User Report**
+## **User Report**
 ![13](https://github.com/user-attachments/assets/0aa0d3e4-fff3-4d26-9696-6d882476c29b)
 
-# **Manage Words**
+## **Manage Words**
 ![14](https://github.com/user-attachments/assets/09f9f621-e813-4e12-be6d-1c4db6408b67)
 
 ---
