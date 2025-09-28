@@ -81,6 +81,7 @@ The app supports **two user types**:
 
 ### 🎯 **Gameplay**
 At game start, a **random 5-letter uppercase word** is chosen. Each submitted **guess** shows **per-letter feedback**:
+
 🟩 **Green → correct letter in correct position**  
 🟧 **Orange → correct letter in wrong position**  
 ⬛ **Grey → letter not in target word**  
