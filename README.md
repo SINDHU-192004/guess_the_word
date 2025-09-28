@@ -36,7 +36,7 @@ This makes it both an **engaging game for players** and a **data-driven tool for
 
 ![7](https://github.com/user-attachments/assets/bda8e12f-bc24-4559-a61d-4d908917044d)
 
-![8](https://github.com/user-attachments/assets/063a17b1-fd87-429c-9813-a5d3caee8865)
+![8](https://github.com/user-attachments/assets/fe3f7aac-d497-4146-9ec5-fd2264c89d59)
 
 # **Game History**
 ![9](https://github.com/user-attachments/assets/5289f6c6-c455-450f-b78b-97e2dbc20efe)
