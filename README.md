@@ -1,4 +1,4 @@
-# 🎮 **GUESS THE WORD – Django Web App** 
+# 🎮 **GUESS THE WORD** 
 
 ## 📌 **Project Overview**
 
