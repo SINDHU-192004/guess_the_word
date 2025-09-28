@@ -32,7 +32,7 @@ This makes it both an **engaging game for players** and a **data-driven tool for
 ![5](https://github.com/user-attachments/assets/017635ab-e11d-4867-bc5f-6c43edf710e2)
 
 # **Guess**
-![6](https://github.com/user-attachments/assets/0f8c08b4-def9-4b23-b5a6-2f2f9744bd33)
+![6](https://github.com/user-attachments/assets/f2acc6ed-fe4a-46cd-8ffa-2712bf96beef)
 
 ![7](https://github.com/user-attachments/assets/bda8e12f-bc24-4559-a61d-4d908917044d)
 
